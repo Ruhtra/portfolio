@@ -1,20 +1,32 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Code, Database, Server, Zap } from "lucide-react"
-import Image from "next/image"
+import { motion } from "framer-motion";
+import { Code, Database, Server, Zap } from "lucide-react";
+import Image from "next/image";
 
 export default function About() {
   const skills = [
-    { icon: <Code className="w-8 h-8 text-blue-500" />, title: "Frontend", description: "React, Next.js, Redux" },
-    { icon: <Server className="w-8 h-8 text-green-500" />, title: "Backend", description: "Node.js, Express, Fastify" },
+    {
+      icon: <Code className="w-8 h-8 text-blue-500" />,
+      title: "Frontend",
+      description: "React, Next.js, Tailwind CSS",
+    },
+    {
+      icon: <Server className="w-8 h-8 text-green-500" />,
+      title: "Backend",
+      description: "Node.js, Express, Fastify",
+    },
     {
       icon: <Database className="w-8 h-8 text-purple-500" />,
       title: "Banco de Dados",
-      description: "MongoDB, Mongoose",
+      description: "PostgreSQL, MongoDB",
     },
-    { icon: <Zap className="w-8 h-8 text-yellow-500" />, title: "Desempenho", description: "Otimização, Caching" },
-  ]
+    {
+      icon: <Zap className="w-8 h-8 text-yellow-500" />,
+      title: "Desempenho",
+      description: "Otimização, Caching",
+    },
+  ];
 
   return (
     <section
@@ -31,7 +43,7 @@ export default function About() {
         >
           Sobre Mim
         </motion.h2>
-        <div className="flex flex-col md:flex-row items-center justify-between">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <motion.div
             className="md:w-1/2 mb-8 md:mb-0"
             initial={{ opacity: 0, x: -50 }}
@@ -40,14 +52,18 @@ export default function About() {
             transition={{ duration: 0.5 }}
           >
             <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              Como um Desenvolvedor Full Stack apaixonado, eu me especializo na construção de aplicações web robustas e
-              escaláveis. Com uma sólida base em Postgress, Express.js, React e Node.js, crio soluções full-stack
-              perfeitas que proporcionam experiências de usuário excepcionais.
+              Como um Desenvolvedor Full Stack apaixonado, eu me especializo na
+              construção de aplicações web robustas e escaláveis. Com uma sólida
+              base em Postgress, Express.js, React e Node.js, crio soluções
+              full-stack perfeitas que proporcionam experiências de usuário
+              excepcionais.
             </p>
             <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
-              Minha experiência se estende a frameworks modernos como Next.js e ferramentas de gerenciamento de estado.
-              Estou comprometido em escrever código limpo e eficiente, e me mantenho atualizado com as últimas
-              tendências da indústria para entregar soluções de ponta para meus clientes.
+              Minha experiência se estende a frameworks modernos como Next.js e
+              ferramentas de gerenciamento de estado. Estou comprometido em
+              escrever código limpo e eficiente, e me mantenho atualizado com as
+              últimas tendências da indústria para entregar soluções de ponta
+              para meus clientes.
             </p>
           </motion.div>
           <motion.div
@@ -58,19 +74,30 @@ export default function About() {
             transition={{ duration: 0.5 }}
           >
             {skills.map((skill, index) => (
-              <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+              <div
+                key={index}
+                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
+              >
                 {skill.icon}
-                <h3 className="text-xl font-semibold mt-4 mb-2 dark:text-white">{skill.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{skill.description}</p>
+                <h3 className="text-xl font-semibold mt-4 mb-2 dark:text-white">
+                  {skill.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  {skill.description}
+                </p>
               </div>
             ))}
           </motion.div>
         </div>
       </div>
       <div className="absolute bottom-0 right-0 w-64 h-64 -mb-32 -mr-32 opacity-20">
-        <Image src="/placeholder.svg?height=256&width=256" alt="Fundo decorativo" width={256} height={256} />
+        <Image
+          src="/placeholder.svg?height=256&width=256"
+          alt="Fundo decorativo"
+          width={256}
+          height={256}
+        />
       </div>
     </section>
-  )
+  );
 }
-

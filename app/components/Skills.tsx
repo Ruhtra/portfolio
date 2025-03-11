@@ -1,14 +1,25 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Code, Database, Server, Layout, GitBranch, Terminal, Layers, Cpu, Globe, Workflow } from "lucide-react"
-import AnimatedSectionHeader from "./AnimatedSectionHeader"
+import { motion } from "framer-motion";
+import {
+  Code,
+  Database,
+  Server,
+  Layout,
+  GitBranch,
+  Terminal,
+  Layers,
+  Cpu,
+  Globe,
+  Workflow,
+} from "lucide-react";
+import AnimatedSectionHeader from "./AnimatedSectionHeader";
 
 const SkillIcon = ({ icon: Icon, color }: { icon: any; color: string }) => (
   <div className={`p-2 rounded-full bg-white dark:bg-gray-800 shadow-lg`}>
     <Icon className={`w-6 h-6 ${color}`} />
   </div>
-)
+);
 
 const skills = [
   {
@@ -23,7 +34,8 @@ const skills = [
     icon: Server,
     name: "Desenvolvimento Backend",
     tech: "Node.js, Express, Fastify",
-    description: "Criação de aplicações robustas do lado do servidor com foco em escalabilidade e arquitetura limpa.",
+    description:
+      "Criação de aplicações robustas do lado do servidor com foco em escalabilidade e Clean Architecture.",
     color: "text-green-500",
   },
   {
@@ -46,45 +58,51 @@ const skills = [
     icon: GitBranch,
     name: "Controle de Versão",
     tech: "Git, GitHub",
-    description: "Gerenciamento eficiente de versões de código com Git e colaboração efetiva através do GitHub.",
+    description:
+      "Gerenciamento eficiente de versões de código com Git e colaboração efetiva através do GitHub.",
     color: "text-orange-500",
   },
   {
     icon: Terminal,
     name: "TypeScript",
     tech: "TypeScript, JavaScript",
-    description: "Escrita de código seguro em termos de tipos para melhor manutenção e experiência do desenvolvedor.",
+    description:
+      "Escrita de código seguro em termos de tipos para melhor manutenção e experiência do desenvolvedor.",
     color: "text-yellow-500",
   },
   {
     icon: Layers,
     name: "Gerenciamento de Estado",
     tech: "TanStack Query",
-    description: "Gerenciamento eficiente de estado e cache de dados em aplicações React.",
+    description:
+      "Gerenciamento eficiente de estado e cache de dados em aplicações React.",
     color: "text-indigo-500",
   },
   {
     icon: Cpu,
     name: "Desenvolvimento de API",
     tech: "REST, MVC, Clean Architecture",
-    description: "Projetando e implementando APIs eficientes para comunicação de dados perfeita.",
+    description:
+      "Projetando e implementando APIs eficientes para comunicação de dados perfeita.",
     color: "text-red-500",
   },
   {
     icon: Globe,
     name: "Desempenho Web",
     tech: "Otimização, SEO",
-    description: "Otimização de aplicações web para velocidade, acessibilidade e visibilidade em mecanismos de busca.",
+    description:
+      "Otimização de aplicações web para velocidade, acessibilidade e visibilidade em mecanismos de busca.",
     color: "text-teal-500",
   },
   {
     icon: Workflow,
     name: "Metodologias Ágeis",
     tech: "Scrum, Kanban",
-    description: "Trabalhando eficientemente em ambientes ágeis com foco em entrega contínua.",
+    description:
+      "Trabalhando eficientemente em ambientes ágeis com foco em entrega contínua.",
     color: "text-cyan-500",
   },
-]
+];
 
 export default function Skills() {
   return (
@@ -96,12 +114,36 @@ export default function Skills() {
       <div className="absolute inset-0 opacity-10">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern id="skill-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-              <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" strokeWidth="2" />
-              <path d="M50 30 L50 70 M30 50 L70 50" stroke="currentColor" strokeWidth="2" />
+            <pattern
+              id="skill-pattern"
+              x="0"
+              y="0"
+              width="100"
+              height="100"
+              patternUnits="userSpaceOnUse"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              />
+              <path
+                d="M50 30 L50 70 M30 50 L70 50"
+                stroke="currentColor"
+                strokeWidth="2"
+              />
             </pattern>
           </defs>
-          <rect x="0" y="0" width="100%" height="100%" fill="url(#skill-pattern)" />
+          <rect
+            x="0"
+            y="0"
+            width="100%"
+            height="100%"
+            fill="url(#skill-pattern)"
+          />
         </svg>
       </div>
 
@@ -123,16 +165,19 @@ export default function Skills() {
                     <h3 className="text-lg font-semibold dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                       {skill.name}
                     </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{skill.tech}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      {skill.tech}
+                    </p>
                   </div>
                 </div>
-                <p className="text-gray-700 dark:text-gray-300 text-sm">{skill.description}</p>
+                <p className="text-gray-700 dark:text-gray-300 text-sm">
+                  {skill.description}
+                </p>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
-

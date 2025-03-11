@@ -1,11 +1,14 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { Github, Linkedin, Mail, ArrowDown } from "lucide-react"
-import { motion } from "framer-motion"
+import Image from "next/image";
+import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
+import { motion } from "framer-motion";
 
 const CodePattern = () => (
-  <svg className="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    className="absolute inset-0 w-full h-full opacity-5"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <pattern
       id="pattern-circles"
       x="0"
@@ -15,11 +18,24 @@ const CodePattern = () => (
       patternUnits="userSpaceOnUse"
       patternContentUnits="userSpaceOnUse"
     >
-      <circle id="pattern-circle" cx="10" cy="10" r="1.6257413380501518" fill="#000"></circle>
+      <circle
+        id="pattern-circle"
+        cx="10"
+        cy="10"
+        r="1.6257413380501518"
+        fill="#000"
+      ></circle>
     </pattern>
-    <rect id="rect" x="0" y="0" width="100%" height="100%" fill="url(#pattern-circles)"></rect>
+    <rect
+      id="rect"
+      x="0"
+      y="0"
+      width="100%"
+      height="100%"
+      fill="url(#pattern-circles)"
+    ></rect>
   </svg>
-)
+);
 
 export default function Hero() {
   return (
@@ -50,8 +66,9 @@ export default function Hero() {
               Desenvolvedor Full Stack
             </h2>
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0">
-              Criando experiências digitais excepcionais com tecnologias web modernas. Especializado em construir
-              aplicações full-stack escaláveis usando MongoDB, Express.js, React e Node.js.
+              Criando experiências digitais excepcionais com tecnologias web
+              modernas. Especializado em construir aplicações full-stack
+              escaláveis usando Postgres, Express.js, React, Next.js e Node.js.
             </p>
             <div className="flex justify-center lg:justify-start space-x-4 mb-8">
               <a
@@ -81,7 +98,11 @@ export default function Hero() {
               </a>
             </div>
             <motion.button
-              onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() =>
+                document
+                  .getElementById("about")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -100,14 +121,16 @@ export default function Hero() {
             <div className="relative w-72 h-72 md:w-96 md:h-96 mx-auto">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 dark:from-blue-600 dark:to-purple-600 rounded-3xl transform rotate-6 opacity-50"></div>
               <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-400 dark:from-purple-600 dark:to-blue-600 rounded-3xl transform -rotate-6 opacity-50"></div>
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <div className="bg-red-500 w-full h-full relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-01-24%20at%2014.05.04-89Qw4ekLp1nPj0VCQlUwkJvi5z0bIF.jpeg"
+                  src="/picture.jpeg"
                   alt="Kawan Arthur"
                   fill
                   className="object-cover"
                   priority
                 />
+                {/* Adicionando o efeito de vinheta */}
+                <div className="absolute inset-0 bg-gradient-to-tl from-black opacity-40 rounded-2xl"></div>
               </div>
             </div>
           </motion.div>
@@ -123,6 +146,5 @@ export default function Hero() {
         <div className="w-1 h-12 bg-gradient-to-b from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 rounded-full animate-pulse"></div>
       </motion.div>
     </section>
-  )
+  );
 }
-
