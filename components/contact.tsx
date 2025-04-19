@@ -1,31 +1,48 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import * as z from "zod"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { toast } from "@/components/ui/use-toast"
-import { Github, Linkedin, Mail, Globe, MessageSquare } from "lucide-react"
-import Link from "next/link"
-import { motion } from "framer-motion"
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { useToast } from "@/components/ui/use-toast";
+import { Github, Linkedin, Mail, Globe, MessageSquare } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 // Importe o hook useLanguage
-import { useLanguage } from "@/contexts/language-context"
+import { useLanguage } from "@/contexts/language-context";
+import { sendContantMail } from "@/app/_actions/sendEmail";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Nome deve ter pelo menos 2 caracteres" }),
   email: z.string().email({ message: "Email inválido" }),
-  message: z.string().min(10, { message: "Mensagem deve ter pelo menos 10 caracteres" }),
-})
+  message: z
+    .string()
+    .min(10, { message: "Mensagem deve ter pelo menos 10 caracteres" }),
+});
 
 export default function Contact() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const { t, language } = useLanguage()
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+  const { t, language } = useLanguage();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -34,13 +51,32 @@ export default function Contact() {
       email: "",
       message: "",
     },
-  })
+  });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true)
+    setIsSubmitting(true);
 
-    // Simulando envio do formulário
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    const response = await sendContantMail(
+      values.email,
+      values.name,
+      values.message
+    );
+
+    if (response.error) {
+      toast({
+        title:
+          language === "pt"
+            ? "Erro ao enviar mensagem"
+            : "Error sending message",
+        description:
+          language === "pt"
+            ? "Houve um erro ao enviar sua mensagem. Tente novamente mais tarde."
+            : "There was an error sending your message. Please try again later.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
 
     toast({
       title: language === "pt" ? "Mensagem enviada!" : "Message sent!",
@@ -48,10 +84,10 @@ export default function Contact() {
         language === "pt"
           ? "Obrigado pelo contato. Responderei em breve."
           : "Thank you for your message. I'll respond soon.",
-    })
+    });
 
-    form.reset()
-    setIsSubmitting(false)
+    form.reset();
+    setIsSubmitting(false);
   }
 
   const containerVariants = {
@@ -63,7 +99,7 @@ export default function Contact() {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -72,18 +108,22 @@ export default function Contact() {
       opacity: 1,
       transition: { duration: 0.5 },
     },
-  }
+  };
 
-  // Número de WhatsApp formatado para URL
-  const whatsappNumber = "5500000000000" // Substitua pelo número real
+  const whatsappNumber = "5584999221557";
   const whatsappMessage =
     language === "pt"
       ? "Olá, vim pelo seu portfólio e gostaria de conversar!"
-      : "Hello, I came from your portfolio and would like to chat!"
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
+      : "Hello, I came from your portfolio and would like to chat!";
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    whatsappMessage
+  )}`;
 
   return (
-    <section id="contact" className="section-container scroll-mt-16 bg-muted/30">
+    <section
+      id="contact"
+      className="section-container scroll-mt-16 bg-muted/30"
+    >
       <div className="container">
         <motion.div
           initial="hidden"
@@ -91,10 +131,16 @@ export default function Contact() {
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
         >
-          <motion.h2 className="section-title text-center" variants={itemVariants}>
+          <motion.h2
+            className="section-title text-center"
+            variants={itemVariants}
+          >
             {t("contact.title")}
           </motion.h2>
-          <motion.p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12" variants={itemVariants}>
+          <motion.p
+            className="text-center text-muted-foreground max-w-2xl mx-auto mb-12"
+            variants={itemVariants}
+          >
             {t("contact.subtitle")}
           </motion.p>
 
@@ -103,11 +149,16 @@ export default function Contact() {
               <Card className="h-full">
                 <CardHeader>
                   <CardTitle>{t("contact.form.title")}</CardTitle>
-                  <CardDescription>{t("contact.form.description")}</CardDescription>
+                  <CardDescription>
+                    {t("contact.form.description")}
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                    <form
+                      onSubmit={form.handleSubmit(onSubmit)}
+                      className="space-y-6"
+                    >
                       <FormField
                         control={form.control}
                         name="name"
@@ -160,9 +211,19 @@ export default function Contact() {
                         )}
                       />
                       <div className="space-y-4">
-                        <Button type="submit" className="w-full group" disabled={isSubmitting}>
-                          <span>{isSubmitting ? t("contact.form.sending") : t("contact.form.submit")}</span>
-                          <span className="inline-block transition-transform group-hover:translate-x-1 ml-1">→</span>
+                        <Button
+                          type="submit"
+                          className="w-full group"
+                          disabled={isSubmitting}
+                        >
+                          <span>
+                            {isSubmitting
+                              ? t("contact.form.sending")
+                              : t("contact.form.submit")}
+                          </span>
+                          <span className="inline-block transition-transform group-hover:translate-x-1 ml-1">
+                            →
+                          </span>
                         </Button>
 
                         <Button
@@ -178,7 +239,9 @@ export default function Contact() {
                             className="flex items-center justify-center gap-2"
                           >
                             <MessageSquare className="h-4 w-4 text-green-600 dark:text-green-400" />
-                            <span className="text-green-700 dark:text-green-400">{t("contact.form.whatsapp")}</span>
+                            <span className="text-green-700 dark:text-green-400">
+                              {t("contact.form.whatsapp")}
+                            </span>
                             <span className="inline-block transition-transform group-hover:translate-x-1 ml-1 text-green-700 dark:text-green-400">
                               →
                             </span>
@@ -191,11 +254,18 @@ export default function Contact() {
               </Card>
             </motion.div>
 
-            <motion.div className="flex flex-col justify-center" variants={itemVariants}>
+            <motion.div
+              className="flex flex-col justify-center"
+              variants={itemVariants}
+            >
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">{t("contact.info.title")}</h3>
-                  <p className="text-muted-foreground">{t("contact.info.description")}</p>
+                  <h3 className="text-xl font-semibold mb-4">
+                    {t("contact.info.title")}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {t("contact.info.description")}
+                  </p>
                 </div>
 
                 <div className="space-y-4">
@@ -213,7 +283,7 @@ export default function Contact() {
                         href="mailto:contato@ruhtra.work"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        contato@ruhtra.work
+                        kawanarthurtech@gmail.com
                       </Link>
                     </div>
                   </motion.div>
@@ -283,7 +353,9 @@ export default function Contact() {
                 </div>
 
                 <div className="pt-6">
-                  <p className="text-muted-foreground">{t("contact.info.availability")}</p>
+                  <p className="text-muted-foreground">
+                    {t("contact.info.availability")}
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -291,5 +363,5 @@ export default function Contact() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

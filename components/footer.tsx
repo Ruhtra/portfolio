@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Github, Linkedin, Mail, Globe } from "lucide-react"
+import Link from "next/link";
+import { Github, Linkedin, Mail, Globe } from "lucide-react";
 
 // Importe o hook useLanguage
-import { useLanguage } from "@/contexts/language-context"
+import { useLanguage } from "@/contexts/language-context";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
-  const { t } = useLanguage()
+  const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
     <footer className="border-t py-8 mt-12">
@@ -17,9 +17,13 @@ export default function Footer() {
           <div className="mb-4 md:mb-0">
             <Link href="/" className="text-xl font-bold">
               <span className="gradient-text">Kawan Arthur</span>
-              <span className="ml-2 text-sm font-medium text-primary">Ruhtra</span>
+              <span className="ml-2 text-sm font-medium text-primary">
+                Ruhtra
+              </span>
             </Link>
-            <p className="text-sm text-muted-foreground mt-1">{t("footer.role")}</p>
+            <p className="text-sm text-muted-foreground mt-1">
+              {t("footer.role")}
+            </p>
           </div>
 
           <div className="flex space-x-4 mb-4 md:mb-0">
@@ -51,7 +55,7 @@ export default function Footer() {
               <Globe className="h-5 w-5" />
             </Link>
             <Link
-              href="mailto:contato@ruhtra.work"
+              href="mailto:kawanarthurtech@gmail.com"
               className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="Email"
             >
@@ -65,5 +69,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
