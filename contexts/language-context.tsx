@@ -7,7 +7,7 @@ type Language = "pt" | "en"
 interface LanguageContextType {
   language: Language
   setLanguage: (language: Language) => void
-  t: (key: string) => string
+  t: (key: string) => string | number
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
@@ -18,7 +18,7 @@ interface LanguageProviderProps {
 
 export function LanguageProvider({ children }: LanguageProviderProps) {
   const [language, setLanguage] = useState<Language>("pt")
-  const [translations, setTranslations] = useState<Record<string, Record<string, string>>>({})
+  const [translations, setTranslations] = useState<Record<string, Record<string, string | number>>>({})
 
   useEffect(() => {
     // Verificar se há uma preferência de idioma salva
@@ -50,7 +50,7 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   }
 
   // Função para obter uma tradução
-  const t = (key: string): string => {
+  const t = (key: string): string | number => {
     if (!translations[language]) return key
     return translations[language][key] || key
   }
