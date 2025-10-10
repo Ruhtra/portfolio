@@ -40,7 +40,7 @@ export default function Projects() {
         language === "pt"
           ? "Aplicativo móvel preparatório para o IF, com plataforma interativa para estudantes."
           : "Mobile application designed as preparatory for the IF, providing an interactive platform for students.",
-      image: "/Dashboard.png?height=400&width=600",
+      image: "/Dashboard.png",
       tags: [
         "Next.js",
         "Node.js",
@@ -85,7 +85,7 @@ export default function Projects() {
         language === "pt"
           ? "Site de portfólio profissional desenvolvido com Next.js e Tailwind CSS."
           : "Professional portfolio website developed with Next.js and Tailwind CSS.",
-      image: "/Portfolio.png?height=400&width=600",
+      image: "/Portfolio.png",
       tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
       github: "https://github.com/ruhtra/portfolio",
       demo: "https://ruhtra.work",
