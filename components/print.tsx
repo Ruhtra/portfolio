@@ -24,9 +24,9 @@ export function Print() {
     const getIcon = (type: string) => {
         switch (type) {
             case "github":
-                return <Globe className="h-3 w-3 flex-shrink-0" />
+                return <Github className="h-3 w-3 flex-shrink-0" />
             case "linkedin":
-                return <Globe className="h-3 w-3 flex-shrink-0" />
+                return <Linkedin className="h-3 w-3 flex-shrink-0" />
             case "website":
                 return <Globe className="h-3 w-3 flex-shrink-0" />
             default:
