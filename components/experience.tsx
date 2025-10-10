@@ -17,7 +17,7 @@ export default function Experience() {
       title:
         language === "pt" ? "Analista de Suporte (Full Stack Developer)" : "Support Analyst (Full Stack Developer)",
       company: "N3 Soluções Empresariais e Contábeis",
-      period: language === "pt" ? "julho de 2023 – presente" : "July 2023 – present",
+      period: language === "pt" ? "julho de 2023 - presente" : "July 2023 - present",
       location: language === "pt" ? "Natal, RN, Brasil (presencial)" : "Natal, RN, Brazil (on-site)",
       description:
         language === "pt"
@@ -28,7 +28,7 @@ export default function Experience() {
     {
       title: language === "pt" ? "Freelancer" : "Freelancer",
       company: language === "pt" ? "Desenvolvimento Web" : "Web Development",
-      period: language === "pt" ? "janeiro de 2020 – junho de 2023" : "January 2020 – June 2023",
+      period: language === "pt" ? "janeiro de 2022 - presente" : "January 2022 - present",
       location: language === "pt" ? "Remoto" : "Remote",
       description:
         language === "pt"

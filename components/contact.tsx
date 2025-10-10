@@ -30,6 +30,7 @@ import { motion } from "framer-motion";
 // Importe o hook useLanguage
 import { useLanguage } from "@/contexts/language-context";
 import { sendContantMail } from "@/app/_actions/sendEmail";
+import { mainInfo } from "@/translations/main";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Nome deve ter pelo menos 2 caracteres" }),
@@ -110,12 +111,11 @@ export default function Contact() {
     },
   };
 
-  const whatsappNumber = "5584999221557";
   const whatsappMessage =
     language === "pt"
       ? "Olá, vim pelo seu portfólio e gostaria de conversar!"
       : "Hello, I came from your portfolio and would like to chat!";
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+  const whatsappUrl = `https://wa.me/${mainInfo.personal.whatsapp}?text=${encodeURIComponent(
     whatsappMessage
   )}`;
 
@@ -280,10 +280,10 @@ export default function Contact() {
                     <div>
                       <h4 className="font-medium">Email</h4>
                       <Link
-                        href="mailto:contato@ruhtra.work"
+                        href={`mailto:${mainInfo.personal.email}`}
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        kawanarthurtech@gmail.com
+                        {mainInfo.personal.email}
                       </Link>
                     </div>
                   </motion.div>
@@ -299,12 +299,12 @@ export default function Contact() {
                     <div>
                       <h4 className="font-medium">Website</h4>
                       <Link
-                        href="https://ruhtra.work"
+                        href={mainInfo.social.portfolio}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        ruhtra.work
+                        {mainInfo.social.portfolio.split('https://')[1]}
                       </Link>
                     </div>
                   </motion.div>
@@ -320,12 +320,12 @@ export default function Contact() {
                     <div>
                       <h4 className="font-medium">LinkedIn</h4>
                       <Link
-                        href="https://linkedin.com/in/kawan-arthur/"
+                        href={mainInfo.social.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        linkedin.com/in/kawan-arthur
+                        {mainInfo.social.linkedin.split('https://')[1]}
                       </Link>
                     </div>
                   </motion.div>
@@ -341,12 +341,12 @@ export default function Contact() {
                     <div>
                       <h4 className="font-medium">GitHub</h4>
                       <Link
-                        href="https://github.com/ruhtra"
+                        href={mainInfo.social.github}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        github.com/ruhtra
+                        {mainInfo.social.github.split('https://')[1]}
                       </Link>
                     </div>
                   </motion.div>

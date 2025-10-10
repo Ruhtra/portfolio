@@ -5,6 +5,7 @@ import { Github, Linkedin, Mail, Globe } from "lucide-react";
 
 // Importe o hook useLanguage
 import { useLanguage } from "@/contexts/language-context";
+import { mainInfo } from "@/translations/main";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -16,9 +17,9 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <Link href="/" className="text-xl font-bold">
-              <span className="gradient-text">Kawan Arthur</span>
+              <span className="gradient-text">{mainInfo.personal.name}</span>
               <span className="ml-2 text-sm font-medium text-primary">
-                Ruhtra
+                {mainInfo.personal.nickname}
               </span>
             </Link>
             <p className="text-sm text-muted-foreground mt-1">
@@ -28,7 +29,7 @@ export default function Footer() {
 
           <div className="flex space-x-4 mb-4 md:mb-0">
             <Link
-              href="https://github.com/ruhtra"
+              href={mainInfo.social.github}
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -37,7 +38,7 @@ export default function Footer() {
               <Github className="h-5 w-5" />
             </Link>
             <Link
-              href="https://linkedin.com/in/kawan-arthur/"
+              href={mainInfo.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -46,7 +47,7 @@ export default function Footer() {
               <Linkedin className="h-5 w-5" />
             </Link>
             <Link
-              href="https://ruhtra.work"
+              href={mainInfo.social.portfolio}
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -55,7 +56,7 @@ export default function Footer() {
               <Globe className="h-5 w-5" />
             </Link>
             <Link
-              href="mailto:kawanarthurtech@gmail.com"
+              href={`mailto:${mainInfo.personal.email}`}
               className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="Email"
             >
@@ -64,7 +65,7 @@ export default function Footer() {
           </div>
 
           <div className="text-sm text-muted-foreground">
-            &copy; {currentYear} Kawan Arthur. {t("footer.rights")}
+            &copy; {currentYear} {mainInfo.personal.name}. {t("footer.rights")}
           </div>
         </div>
       </div>

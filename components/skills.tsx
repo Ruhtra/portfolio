@@ -25,6 +25,7 @@ export default function Skills() {
       { name: "Tailwind CSS", key: "skills.frontend.tailwindcss" },
       { name: "shadcn/ui", key: "skills.frontend.shadcnui" },
       { name: "Blazor", key: "skills.frontend.blazor" },
+      { name: "Vue", key: "skills.frontend.vue" },
     ],
     backend: [
       { name: "C#", key: "skills.backend.csharp" },
@@ -32,7 +33,7 @@ export default function Skills() {
       { name: "Node.js", key: "skills.backend.nodejs" },
       { name: "Express", key: "skills.backend.express" },
       { name: "Auth.js", key: "skills.backend.authjs" },
-      { name: "Delphi", key: "skills.backend.delphi" },
+      { name: "Python", key: "skills.backend.python" },
     ],
     database: [
       { name: "SQL Server", key: "skills.database.sqlserver" },
