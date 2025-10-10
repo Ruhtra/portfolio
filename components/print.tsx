@@ -123,12 +123,11 @@ export function Print() {
 
   return (
     <>
-      <div className="flex gap-2">
+      <div className="flex gap-2 items-center justify-center">
         <Button
           size="lg"
           className="rounded-full group relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300"
           onClick={generatePDFWithCanvas}
-          disabled={isPrinting}
         >
           <div
             className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-0 group-hover:opacity-30 transition-opacity duration-300"
@@ -139,7 +138,7 @@ export function Print() {
           />
           <Sparkles className="h-4 w-4 mr-2 animate-pulse" />
           <span className="font-semibold relative z-10">
-            {isPrinting ? "Gerando PDF..." : t("hero.cta.cv")}
+            {t("hero.cta.cv")}
           </span>
           <Download className="h-4 w-4 ml-2 group-hover:translate-y-1 transition-transform relative z-10" />
         </Button>

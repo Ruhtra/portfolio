@@ -1,35 +1,40 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { ModeToggle } from "./mode-toggle"
-import { Menu, X, ChevronDown, Globe } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState, useEffect } from "react";
+import { ModeToggle } from "./mode-toggle";
+import { Menu, X, ChevronDown, Globe } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { motion, AnimatePresence } from "framer-motion";
 // Importe o useLanguage
-import { useLanguage } from "@/contexts/language-context"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { useLanguage } from "@/contexts/language-context";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 // Modifique a função Navbar para usar as traduções
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const { t, language, setLanguage } = useLanguage()
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { t, language, setLanguage } = useLanguage();
 
   // Adicionar o efeito de scroll
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
-        setScrolled(true)
+        setScrolled(true);
       } else {
-        setScrolled(false)
+        setScrolled(false);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   // Atualize os links de navegação para usar as traduções
   const navLinks = [
@@ -38,7 +43,7 @@ export default function Navbar() {
     { name: t("nav.projects"), href: "#projects" },
     { name: t("nav.skills"), href: "#skills" },
     { name: t("nav.contact"), href: "#contact" },
-  ]
+  ];
 
   const navVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -51,57 +56,61 @@ export default function Navbar() {
         delayChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: -10 },
     visible: { opacity: 1, y: 0 },
-  }
+  };
 
   const mobileMenuVariants = {
-    hidden: { opacity: 0, height: 0 },
+    hidden: { opacity: 0, scaleY: 0, transformOrigin: "top" },
     visible: {
       opacity: 1,
-      height: "auto",
-      transition: {
-        duration: 0.3,
-        staggerChildren: 0.1,
-        delayChildren: 0.1,
-      },
+      scaleY: 1,
+      transformOrigin: "top",
+      transition: { duration: 0.25, ease: "easeOut" },
     },
     exit: {
       opacity: 0,
-      height: 0,
-      transition: { duration: 0.3 },
+      scaleY: 0,
+      transformOrigin: "top",
+      transition: { duration: 0.2, ease: "easeIn" },
     },
-  }
+  };
 
   // Função para scroll suave
   const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId)
+    const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" })
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
     }
     // Fechar o menu mobile se estiver aberto
     if (isOpen) {
-      setIsOpen(false)
+      setIsOpen(false);
     }
-  }
+  };
 
   // Obter o nome do idioma atual para exibição
   const getCurrentLanguageName = () => {
-    return language === "pt" ? "Português" : "English"
-  }
+    return language === "pt" ? "Português" : "English";
+  };
 
   return (
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-200 ${
-        scrolled ? "bg-background/80 backdrop-blur-md border-b" : "bg-transparent"
+        scrolled
+          ? "bg-background/80 backdrop-blur-md border-b"
+          : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="text-xl font-bold transition-colors hover:text-primary"
@@ -133,7 +142,11 @@ export default function Navbar() {
             <motion.div variants={itemVariants}>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="outline" size="sm" className="flex items-center gap-1 h-9 px-3 border-primary/20">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="flex items-center gap-1 h-9 px-3 border-primary/20"
+                  >
                     <Globe className="h-4 w-4 text-primary mr-1" />
                     <span>{getCurrentLanguageName()}</span>
                     <ChevronDown className="h-4 w-4 text-muted-foreground ml-1" />
@@ -142,13 +155,17 @@ export default function Navbar() {
                 <DropdownMenuContent align="end" className="w-40">
                   <DropdownMenuItem
                     onClick={() => setLanguage("pt")}
-                    className={language === "pt" ? "bg-primary/10 font-medium" : ""}
+                    className={
+                      language === "pt" ? "bg-primary/10 font-medium" : ""
+                    }
                   >
                     Português
                   </DropdownMenuItem>
                   <DropdownMenuItem
                     onClick={() => setLanguage("en")}
-                    className={language === "en" ? "bg-primary/10 font-medium" : ""}
+                    className={
+                      language === "en" ? "bg-primary/10 font-medium" : ""
+                    }
                   >
                     English
                   </DropdownMenuItem>
@@ -179,13 +196,17 @@ export default function Navbar() {
               <DropdownMenuContent align="end" className="w-32">
                 <DropdownMenuItem
                   onClick={() => setLanguage("pt")}
-                  className={language === "pt" ? "bg-primary/10 font-medium" : ""}
+                  className={
+                    language === "pt" ? "bg-primary/10 font-medium" : ""
+                  }
                 >
                   Português
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={() => setLanguage("en")}
-                  className={language === "en" ? "bg-primary/10 font-medium" : ""}
+                  className={
+                    language === "en" ? "bg-primary/10 font-medium" : ""
+                  }
                 >
                   English
                 </DropdownMenuItem>
@@ -193,8 +214,17 @@ export default function Navbar() {
             </DropdownMenu>
 
             <ModeToggle />
-            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle Menu">
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle Menu"
+            >
+              {isOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </Button>
           </div>
         </div>
@@ -204,14 +234,15 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="md:hidden"
-            variants={mobileMenuVariants}
+            key="mobile-menu"
             initial="hidden"
             animate="visible"
             exit="exit"
+            variants={mobileMenuVariants}
+            className="md:hidden origin-top bg-background border-b relative z-40 overflow-hidden"
           >
-            <div className="container mx-auto px-4 py-4 bg-background border-b">
-              <nav className="flex flex-col space-y-4">
+            <div className="container mx-auto px-4 py-4">
+              <nav className="flex flex-col space-y-3">
                 {navLinks.map((link) => (
                   <motion.div
                     key={link.name}
@@ -233,5 +264,5 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </header>
-  )
+  );
 }

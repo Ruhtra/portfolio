@@ -1,20 +1,15 @@
-"use client"
+"use client";
 
-// Replace the hardcoded skills data with a function that uses translations
-import React from "react"
-
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Card } from "@/components/ui/card"
-import { motion } from "framer-motion"
-
-// Importe o hook useLanguage
-import { useLanguage } from "@/contexts/language-context"
+import React from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/language-context";
 
 export default function Skills() {
-  const [selectedCategory, setSelectedCategory] = React.useState("frontend")
-  const { t } = useLanguage()
+  const [selectedCategory, setSelectedCategory] = React.useState("frontend");
+  const { t } = useLanguage();
 
-  // Define skill keys for each category
   const skillsData = {
     frontend: [
       { name: "React", key: "skills.frontend.react" },
@@ -62,7 +57,7 @@ export default function Skills() {
       { name: "Render", key: "skills.tools.render" },
       { name: "Supabase", key: "skills.tools.supabase" },
     ],
-  }
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -72,76 +67,98 @@ export default function Skills() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  }
+  };
 
   const titleVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  }
+  };
 
   return (
     <section id="skills" className="section-container scroll-mt-16">
       <div className="container">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}>
-          <motion.h2 className="section-title text-center" variants={titleVariants}>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <motion.h2
+            className="section-title text-center"
+            variants={titleVariants}
+          >
             {t("skills.title")}
           </motion.h2>
-          <motion.p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12" variants={titleVariants}>
+          <motion.p
+            className="text-center text-muted-foreground max-w-2xl mx-auto mb-8 md:mb-12"
+            variants={titleVariants}
+          >
             {t("skills.subtitle")}
           </motion.p>
 
-          <Tabs defaultValue="frontend" className="w-full" onValueChange={setSelectedCategory}>
-            <TabsList className="grid grid-cols-5 w-full max-w-3xl mx-auto mb-8">
-              <TabsTrigger
-                value="frontend"
-                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
-              >
-                {t("skills.frontend")}
-              </TabsTrigger>
-              <TabsTrigger
-                value="backend"
-                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
-              >
-                {t("skills.backend")}
-              </TabsTrigger>
-              <TabsTrigger
-                value="database"
-                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
-              >
-                {t("skills.database")}
-              </TabsTrigger>
-              <TabsTrigger
-                value="libraries"
-                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
-              >
-                {t("skills.libraries")}
-              </TabsTrigger>
-              <TabsTrigger
-                value="tools"
-                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
-              >
-                {t("skills.tools")}
-              </TabsTrigger>
-            </TabsList>
+          <Tabs
+            defaultValue="frontend"
+            className="w-full"
+            onValueChange={setSelectedCategory}
+          >
+            {/* TabsList responsivo */}
+            <div className="overflow-x-auto pb-2 mb-6 md:mb-8">
+              <TabsList className="grid w-full max-w-3xl mx-auto min-w-[500px] md:min-w-0 grid-cols-5 gap-1 p-1 bg-muted/50">
+                <TabsTrigger
+                  value="frontend"
+                  className="text-xs md:text-sm px-2 py-2 truncate data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
+                >
+                  {t("skills.frontend")}
+                </TabsTrigger>
+                <TabsTrigger
+                  value="backend"
+                  className="text-xs md:text-sm px-2 py-2 truncate data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
+                >
+                  {t("skills.backend")}
+                </TabsTrigger>
+                <TabsTrigger
+                  value="database"
+                  className="text-xs md:text-sm px-2 py-2 truncate data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
+                >
+                  {t("skills.database")}
+                </TabsTrigger>
+                <TabsTrigger
+                  value="libraries"
+                  className="text-xs md:text-sm px-2 py-2 truncate data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
+                >
+                  {t("skills.libraries")}
+                </TabsTrigger>
+                <TabsTrigger
+                  value="tools"
+                  className="text-xs md:text-sm px-2 py-2 truncate data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
+                >
+                  {t("skills.tools")}
+                </TabsTrigger>
+              </TabsList>
+            </div>
 
+            {/* Conteúdo das tabs */}
             {Object.keys(skillsData).map((category) => (
               <TabsContent key={category} value={category} className="mt-0">
                 <motion.div
-                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
                   variants={containerVariants}
                   initial="hidden"
                   animate={selectedCategory === category ? "show" : "hidden"}
                 >
                   {skillsData[category].map((skill) => (
                     <motion.div key={skill.name} variants={itemVariants}>
-                      <Card className="h-full bg-card rounded-lg p-5 border shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300">
-                        <h3 className="font-medium text-lg mb-2">{skill.name}</h3>
-                        <p className="text-sm text-muted-foreground">{t(skill.key)}</p>
+                      <Card className="h-full bg-card rounded-lg p-4 md:p-5 border shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300">
+                        <h3 className="font-medium text-base md:text-lg mb-2">
+                          {skill.name}
+                        </h3>
+                        <p className="text-xs md:text-sm text-muted-foreground">
+                          {t(skill.key)}
+                        </p>
                       </Card>
                     </motion.div>
                   ))}
@@ -152,5 +169,5 @@ export default function Skills() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
