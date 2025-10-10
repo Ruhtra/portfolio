@@ -1,5 +1,4 @@
-import { mainInfo } from "./main"
-
+import { mainInfo } from "./main";
 
 export const pt = {
   "nav.about": "Sobre",
@@ -9,70 +8,117 @@ export const pt = {
   "nav.contact": "Contato",
   "nav.language": "Idioma",
   "hero.title": "Desenvolvedor Full-Stack",
-  "hero.subtitle": "Transformando ideias em soluções digitais eficientes e escaláveis",
+  "hero.subtitle":
+    "Transformando ideias em soluções digitais eficientes e escaláveis",
   "hero.cta.projects": "Ver Projetos",
   "hero.cta.about": "Sobre Mim",
   "hero.cta.cv": "Baixar Currículo",
-  "hero.language.notice": "This portfolio is also available in English. You can change the language in the navigation bar.",
+  "hero.language.notice":
+    "This portfolio is also available in English. You can change the language in the navigation bar.",
   "about.title": "Sobre Mim",
-  "about.journey": "Minha jornada na programação começou aos 13 anos como autodidata, explorando segurança web e práticas de proteção de sistemas, o que me deu uma base sólida em desenvolvimento seguro.",
+  "about.journey":
+    "Minha jornada na programação começou aos 13 anos como autodidata, explorando segurança web e práticas de proteção de sistemas, o que me deu uma base sólida em desenvolvimento seguro.",
   "about.experience": `Nos últimos ${mainInfo.career.yearsOfExperience} anos, atuei como desenvolvedor de software, seguindo metodologias modernas e boas práticas do mercado. Atualmente, trabalho como Analista de Suporte (Full Stack Developer) na N3 Soluções Empresariais e Contábeis.`,
-  "about.tech": "Desenvolvo aplicações web com React, Next.js, TypeScript, C# e ASP.NET Core, além de SQL Server, e contribuo na manutenção de sistemas legados em Delphi com Firebird.",
-  "about.learning": "Acredito no aprendizado contínuo como ferramenta essencial, buscando sempre entregar soluções eficientes e escaláveis.",
+  "about.tech":
+    "Desenvolvo aplicações web com React, Next.js, TypeScript, C# e ASP.NET Core, além de SQL Server, e contribuo na manutenção de sistemas legados em Delphi com Firebird.",
+  "about.learning":
+    "Acredito no aprendizado contínuo como ferramenta essencial, buscando sempre entregar soluções eficientes e escaláveis.",
   "experience.title": "Experiência Profissional",
-  "experience.subtitle": "Minha trajetória profissional e principais atuações no mercado de desenvolvimento.",
+  "experience.subtitle":
+    "Minha trajetória profissional e principais atuações no mercado de desenvolvimento.",
   "experience.technologies": "Tecnologias:",
   "projects.title": "Projetos",
-  "projects.subtitle": "Conheça alguns dos projetos que desenvolvi, demonstrando minhas habilidades e experiência em diferentes tecnologias.",
+  "projects.subtitle":
+    "Conheça alguns dos projetos que desenvolvi, demonstrando minhas habilidades e experiência em diferentes tecnologias.",
   "projects.viewDetails": "Ver Detalhes",
   "projects.github": "GitHub",
   "projects.demo": "Demo",
   "skills.title": "Habilidades",
-  "skills.subtitle": "Tecnologias e ferramentas que utilizo para desenvolver soluções modernas e eficientes.",
+  "skills.subtitle":
+    "Tecnologias e ferramentas que utilizo para desenvolver soluções modernas e eficientes.",
   "skills.frontend": "Frontend",
-  "skills.frontend.react": "Desenvolvimento de interfaces interativas com componentes reutilizáveis, hooks e gerenciamento de estado eficiente.",
-  "skills.frontend.nextjs": "Criação de aplicações web com SSR, SSG e ISR para melhor performance e SEO.",
-  "skills.frontend.typescript": "Implementação de tipagem estática para código mais seguro, manutenível e com melhor tooling.",
-  "skills.frontend.javascript": "Desenvolvimento de funcionalidades dinâmicas e interativas para aplicações web modernas.",
-  "skills.frontend.html5css3": "Estruturação semântica e estilização moderna para interfaces web acessíveis e responsivas.",
-  "skills.frontend.tailwindcss": "Estilização rápida e responsiva com abordagem utility-first para desenvolvimento ágil de interfaces.",
-  "skills.frontend.shadcnui": "Implementação de componentes acessíveis e customizáveis baseados em Radix UI e Tailwind CSS.",
-  "skills.frontend.blazor": "Desenvolvimento de aplicações web interativas usando C# e .NET no frontend.",
-  "skills.frontend.vue": "Desenvolvimento de interfaces reativas e componentes modulares utilizando o framework Vue.js.",
+  "skills.frontend.react":
+    "Desenvolvimento de interfaces interativas com componentes reutilizáveis, hooks e gerenciamento de estado eficiente.",
+  "skills.frontend.nextjs":
+    "Criação de aplicações web com SSR, SSG e ISR para melhor performance e SEO.",
+  "skills.frontend.typescript":
+    "Implementação de tipagem estática para código mais seguro, manutenível e com melhor tooling.",
+  "skills.frontend.javascript":
+    "Desenvolvimento de funcionalidades dinâmicas e interativas para aplicações web modernas.",
+  "skills.frontend.html5css3":
+    "Estruturação semântica e estilização moderna para interfaces web acessíveis e responsivas.",
+  "skills.frontend.tailwindcss":
+    "Estilização rápida e responsiva com abordagem utility-first para desenvolvimento ágil de interfaces.",
+  "skills.frontend.shadcnui":
+    "Implementação de componentes acessíveis e customizáveis baseados em Radix UI e Tailwind CSS.",
+  "skills.frontend.blazor":
+    "Desenvolvimento de aplicações web interativas usando C# e .NET no frontend.",
+  "skills.frontend.vue":
+    "Desenvolvimento de interfaces reativas e componentes modulares utilizando o framework Vue.js.",
   "skills.backend": "Backend",
-  "skills.backend.csharp": "Desenvolvimento de aplicações robustas e escaláveis com foco em performance e manutenibilidade.",
-  "skills.backend.aspnetcore": "Criação de APIs RESTful e aplicações web com arquitetura MVC e padrões de design modernos.",
-  "skills.backend.nodejs": "Desenvolvimento de servidores e APIs com JavaScript/TypeScript no backend para aplicações escaláveis.",
-  "skills.backend.express": "Framework minimalista para criação de APIs e aplicações web com Node.js de forma rápida e flexível.",
-  "skills.backend.authjs": "Implementação de autenticação e autorização segura e flexível para aplicações web modernas.",
-  "skills.backend.python": "Desenvolvimento de APIs backend e scripts de automação, para soluções eficientes e escaláveis.", "skills.database": "Banco de Dados",
-  "skills.database.sqlserver": "Modelagem, otimização e consulta de dados em ambientes corporativos de alta performance.",
-  "skills.database.postgresql": "Implementação de bancos de dados relacionais com recursos avançados e extensibilidade.",
-  "skills.database.mongodb": "Armazenamento de dados em formato de documentos para aplicações modernas e flexíveis.",
-  "skills.database.firebird": "Gerenciamento de bancos de dados relacionais para sistemas legados e aplicações empresariais.",
-  "skills.database.prisma": "ORM de próxima geração para TypeScript e Node.js com foco em type-safety e produtividade.",
-  "skills.database.dapper": "Micro ORM de alta performance para .NET, permitindo mapeamento objeto-relacional eficiente.",
+  "skills.backend.csharp":
+    "Desenvolvimento de aplicações robustas e escaláveis com foco em performance e manutenibilidade.",
+  "skills.backend.aspnetcore":
+    "Criação de APIs RESTful e aplicações web com arquitetura MVC e padrões de design modernos.",
+  "skills.backend.nodejs":
+    "Desenvolvimento de servidores e APIs com JavaScript/TypeScript no backend para aplicações escaláveis.",
+  "skills.backend.express":
+    "Framework minimalista para criação de APIs e aplicações web com Node.js de forma rápida e flexível.",
+  "skills.backend.authjs":
+    "Implementação de autenticação e autorização segura e flexível para aplicações web modernas.",
+  "skills.backend.python":
+    "Desenvolvimento de APIs backend e scripts de automação, para soluções eficientes e escaláveis.",
+  "skills.database": "Banco de Dados",
+  "skills.database.sqlserver":
+    "Modelagem, otimização e consulta de dados em ambientes corporativos de alta performance.",
+  "skills.database.postgresql":
+    "Implementação de bancos de dados relacionais com recursos avançados e extensibilidade.",
+  "skills.database.mongodb":
+    "Armazenamento de dados em formato de documentos para aplicações modernas e flexíveis.",
+  "skills.database.firebird":
+    "Gerenciamento de bancos de dados relacionais para sistemas legados e aplicações empresariais.",
+  "skills.database.prisma":
+    "ORM de próxima geração para TypeScript e Node.js com foco em type-safety e produtividade.",
+  "skills.database.dapper":
+    "Micro ORM de alta performance para .NET, permitindo mapeamento objeto-relacional eficiente.",
   "skills.libraries": "Bibliotecas",
-  "skills.libraries.tanstack": "Gerenciamento de estado assíncrono e cache para dados de APIs com foco em UX e performance.",
-  "skills.libraries.zod": "Validação de esquemas TypeScript-first para garantir integridade de dados em runtime.",
-  "skills.libraries.framer": "Criação de animações fluidas e interativas para melhorar a experiência do usuário.",
-  "skills.libraries.reacthookform": "Gerenciamento eficiente de formulários com validação e performance otimizada.",
-  "skills.libraries.axios": "Cliente HTTP baseado em Promises para requisições de API com interface consistente.",
-  "skills.libraries.radix": "Componentes primitivos acessíveis e sem estilo para construção de interfaces robustas.",
+  "skills.libraries.tanstack":
+    "Gerenciamento de estado assíncrono e cache para dados de APIs com foco em UX e performance.",
+  "skills.libraries.zod":
+    "Validação de esquemas TypeScript-first para garantir integridade de dados em runtime.",
+  "skills.libraries.framer":
+    "Criação de animações fluidas e interativas para melhorar a experiência do usuário.",
+  "skills.libraries.reacthookform":
+    "Gerenciamento eficiente de formulários com validação e performance otimizada.",
+  "skills.libraries.axios":
+    "Cliente HTTP baseado em Promises para requisições de API com interface consistente.",
+  "skills.libraries.radix":
+    "Componentes primitivos acessíveis e sem estilo para construção de interfaces robustas.",
   "skills.tools": "Ferramentas",
-  "skills.tools.git": "Controle de versão e colaboração em equipes de desenvolvimento com branching e merging eficientes.",
-  "skills.tools.github": "Plataforma de hospedagem de código com recursos de colaboração, CI/CD e gestão de projetos.",
-  "skills.tools.vscode": "Editor de código extensível e customizável para desenvolvimento produtivo em múltiplas linguagens.",
-  "skills.tools.visualstudio": "IDE completo para desenvolvimento de aplicações .NET e C# com ferramentas avançadas de debugging.",
-  "skills.tools.figma": "Colaboração com designers e implementação de interfaces a partir de protótipos de alta fidelidade.",
-  "skills.tools.vercel": "Plataforma para deploy e hospedagem de aplicações frontend com integração contínua e preview deployments.",
-  "skills.tools.heroku": "Plataforma como serviço (PaaS) para deploy rápido de aplicações web com foco em produtividade.",
-  "skills.tools.render": "Serviço de cloud hosting unificado para aplicações web, bancos de dados e serviços estáticos.",
-  "skills.tools.supabase": "Alternativa open source ao Firebase com banco de dados PostgreSQL, autenticação e armazenamento.",
+  "skills.tools.git":
+    "Controle de versão e colaboração em equipes de desenvolvimento com branching e merging eficientes.",
+  "skills.tools.github":
+    "Plataforma de hospedagem de código com recursos de colaboração, CI/CD e gestão de projetos.",
+  "skills.tools.vscode":
+    "Editor de código extensível e customizável para desenvolvimento produtivo em múltiplas linguagens.",
+  "skills.tools.visualstudio":
+    "IDE completo para desenvolvimento de aplicações .NET e C# com ferramentas avançadas de debugging.",
+  "skills.tools.figma":
+    "Colaboração com designers e implementação de interfaces a partir de protótipos de alta fidelidade.",
+  "skills.tools.vercel":
+    "Plataforma para deploy e hospedagem de aplicações frontend com integração contínua e preview deployments.",
+  "skills.tools.heroku":
+    "Plataforma como serviço (PaaS) para deploy rápido de aplicações web com foco em produtividade.",
+  "skills.tools.render":
+    "Serviço de cloud hosting unificado para aplicações web, bancos de dados e serviços estáticos.",
+  "skills.tools.supabase":
+    "Alternativa open source ao Firebase com banco de dados PostgreSQL, autenticação e armazenamento.",
   "contact.title": "Contato",
-  "contact.subtitle": "Tem um projeto em mente ou quer conversar? Entre em contato comigo!",
+  "contact.subtitle":
+    "Tem um projeto em mente ou quer conversar? Entre em contato comigo!",
   "contact.form.title": "Envie uma mensagem",
-  "contact.form.description": "Preencha o formulário abaixo e entrarei em contato o mais breve possível.",
+  "contact.form.description":
+    "Preencha o formulário abaixo e entrarei em contato o mais breve possível.",
   "contact.form.name": "Nome",
   "contact.form.email": "Email",
   "contact.form.message": "Mensagem",
@@ -80,8 +126,10 @@ export const pt = {
   "contact.form.sending": "Enviando...",
   "contact.form.whatsapp": "Fale comigo no WhatsApp",
   "contact.info.title": "Informações de Contato",
-  "contact.info.description": "Sinta-se à vontade para entrar em contato comigo através das seguintes opções:",
-  "contact.info.availability": "Estou disponível para projetos freelance, oportunidades de trabalho em tempo integral e colaborações.",
+  "contact.info.description":
+    "Sinta-se à vontade para entrar em contato comigo através das seguintes opções:",
+  "contact.info.availability":
+    "Estou disponível para projetos freelance, oportunidades de trabalho em tempo integral e colaborações.",
   "footer.role": "Desenvolvedor Full-Stack",
   "footer.rights": "Todos os direitos reservados.",
   "cv.personal.name": mainInfo.personal.name,
@@ -97,8 +145,10 @@ export const pt = {
   "cv.contact.address.value": mainInfo.personal.location,
   "cv.contact.birthdate.label": "Data de Nascimento",
   "cv.contact.birthdate.value": (() => {
-    const [year, month, day] = mainInfo.personal.birthDate.split('-').map(Number);
-    return `${day.toString().padStart(2, '0')}/${month.toString().padStart(2, '0')}/${year}`;
+    const [year, month, day] = mainInfo.personal.birthDate
+      .split("-")
+      .map(Number);
+    return `${day.toString().padStart(2, "0")}/${month.toString().padStart(2, "0")}/${year}`;
   })(),
   // Resultado: "06/01/2003"
   "cv.links.title": "Links",
@@ -150,25 +200,38 @@ export const pt = {
   "cv.experience.n3.company": "N3 Soluções Contábeis e Empresariais LTDA",
   "cv.experience.n3.period": "Jul 2023 - Presente",
   "cv.experience.n3.position": "Analista de Suporte de Software / Programador",
-  "cv.experience.n3.responsibility1": "Desenvolvimento de aplicações web utilizando C#, SQL Server, JavaScript, Node.js e Firebird",
-  "cv.experience.n3.responsibility2": "Manutenção e otimização de sistemas existentes, garantindo melhor desempenho e estabilidade",
-  "cv.experience.n3.responsibility3": "Implementação de práticas de CI/CD com GitHub, automatizando deploys",
-  "cv.experience.n3.responsibility4": "Gerenciamento do servidor e infraestrutura, assegurando que as aplicações estejam publicadas e seguras",
+  "cv.experience.n3.responsibility1":
+    "Desenvolvimento de aplicações web utilizando C#, SQL Server, JavaScript, Node.js e Firebird",
+  "cv.experience.n3.responsibility2":
+    "Manutenção e otimização de sistemas existentes, garantindo melhor desempenho e estabilidade",
+  "cv.experience.n3.responsibility3":
+    "Implementação de práticas de CI/CD com GitHub, automatizando deploys",
+  "cv.experience.n3.responsibility4":
+    "Gerenciamento do servidor e infraestrutura, assegurando que as aplicações estejam publicadas e seguras",
   "cv.experience.freelancer.company": "Freelancer",
   "cv.experience.freelancer.period": "2022 - Presente",
   "cv.experience.freelancer.position": "Desenvolvedor Full Stack",
-  "cv.experience.freelancer.responsibility1": "Desenvolvimento de projetos utilizando JavaScript, Node.js, TypeScript e PostgreSQL",
-  "cv.experience.freelancer.responsibility2": "Aplicação de boas práticas e integração de bibliotecas como Prisma, Zod, Tailwind CSS, Auth.js",
-  "cv.experience.freelancer.responsibility3": "Criação de soluções utilizando Next.js, React e APIs desenvolvidas com TypeScript no ambiente Node.js, garantindo robustez e escalabilidade",
+  "cv.experience.freelancer.responsibility1":
+    "Desenvolvimento de projetos utilizando JavaScript, Node.js, TypeScript e PostgreSQL",
+  "cv.experience.freelancer.responsibility2":
+    "Aplicação de boas práticas e integração de bibliotecas como Prisma, Zod, Tailwind CSS, Auth.js",
+  "cv.experience.freelancer.responsibility3":
+    "Criação de soluções utilizando Next.js, React e APIs desenvolvidas com TypeScript no ambiente Node.js, garantindo robustez e escalabilidade",
   "cv.projects.title": "Projetos Relevantes",
   "cv.projects.zahir.name": "Zahir Website",
-  "cv.projects.zahir.description1": "Criação de um portfólio para gerenciamento de vídeos",
-  "cv.projects.zahir.description2": "Tecnologias: MongoDB (Atlas), JavaScript, React, Node.js",
-  "cv.projects.zahir.description4": "https://github.com/Ruhtra/zahir-website-react",
+  "cv.projects.zahir.description1":
+    "Criação de um portfólio para gerenciamento de vídeos",
+  "cv.projects.zahir.description2":
+    "Tecnologias: MongoDB (Atlas), JavaScript, React, Node.js",
+  "cv.projects.zahir.description3":
+    "https://github.com/Ruhtra/zahir-website-react",
   "cv.projects.estudeai.name": "Estude Ai",
-  "cv.projects.estudeai.description1": "Desenvolvimento de uma plataforma para resolução de questões educacionais",
-  "cv.projects.estudeai.description2": "Tecnologias: PostgreSQL, TypeScript, Node.js, Next.js",
-  "cv.projects.estudeai.description3": "Bibliotecas utilizadas: Zod (validação de dados), Auth.js (autenticação v5), shadcn/ui (componentes de UI), Tailwind CSS (estilização)",
+  "cv.projects.estudeai.description1":
+    "Desenvolvimento de uma plataforma para resolução de questões educacionais",
+  "cv.projects.estudeai.description2":
+    "Tecnologias: PostgreSQL, TypeScript, Node.js, Next.js",
+  "cv.projects.estudeai.description3":
+    "Bibliotecas utilizadas: Zod (validação de dados), Auth.js (autenticação v5), shadcn/ui (componentes de UI), Tailwind CSS (estilização)",
   "cv.projects.estudeai.description4": "https://github.com/ruhtra/estudeai",
   "cv.education.title": "Educação",
   "cv.education.technical.degree": "Técnico em Informática",
@@ -177,12 +240,16 @@ export const pt = {
   "cv.education.highschool.degree": "Ensino Médio",
   "cv.education.highschool.institution": "Senador Jessé Pinto Freire - CENEP",
   "cv.education.highschool.period": "Janeiro de 2018 - Novembro de 2020",
-  "cv.education.datascience.degree": "Data Science e Machine Learning com Python",
+  "cv.education.datascience.degree":
+    "Data Science e Machine Learning com Python",
   "cv.education.datascience.institution": "Curso",
   "cv.education.datascience.period": "",
   "cv.differentials.title": "Diferenciais",
-  "cv.differentials.item1": "Compromisso contínuo com o aprimoramento e a evolução profissional",
-  "cv.differentials.item2": "Capacidade de adaptação rápida a novas linguagens e tecnologias",
-  "cv.differentials.item3": "Desenvolvimento de soluções escaláveis e eficientes, sempre alinhadas às melhores práticas do mercado",
-  "cv.buttons.print": "Imprimir / Baixar PDF"
-}
+  "cv.differentials.item1":
+    "Compromisso contínuo com o aprimoramento e a evolução profissional",
+  "cv.differentials.item2":
+    "Capacidade de adaptação rápida a novas linguagens e tecnologias",
+  "cv.differentials.item3":
+    "Desenvolvimento de soluções escaláveis e eficientes, sempre alinhadas às melhores práticas do mercado",
+  "cv.buttons.print": "Baixar PDF",
+};
