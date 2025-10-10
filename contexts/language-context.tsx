@@ -28,6 +28,11 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   const [isLoading, setIsLoading] = useState(true)
   const [translationsData, setTranslationsData] = useState<Record<string, Record<string, string | number>>>({})
 
+
+
+  // Adicione um efeito para mostrar loading apenas no client
+  const [isClient, setIsClient] = useState(false)
+
   useEffect(() => {
     const initializeLanguage = async () => {
       setIsLoading(true)
@@ -95,6 +100,48 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   const t = (key: string): string | number => {
     if (isLoading || !translationsData[language]) return key
     return translationsData[language][key] || key
+  }
+
+
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  // Mostra loading apenas no client
+  if (!isClient || isLoading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-background">
+        <div className="flex flex-col items-center gap-6">
+          {/* Animated Logo/Spinner */}
+          <div className="relative h-20 w-20">
+            {/* Outer rotating ring - CSS animation */}
+            <div className="absolute inset-0 animate-spin rounded-full border-4 border-primary/20 border-t-primary" />
+
+            {/* Inner pulsing circle */}
+            <div className="absolute inset-0 m-auto h-14 w-14 animate-pulse rounded-full bg-gradient-to-br from-primary to-purple-500 opacity-60" />
+
+            {/* Center dot */}
+            <div className="absolute inset-0 m-auto h-6 w-6 rounded-full bg-background" />
+          </div>
+
+          {/* Loading text with dots */}
+          <div className="flex items-center gap-1">
+            <span className="text-base font-medium text-foreground">Carregando</span>
+            <span className="flex gap-0.5">
+              <span className="animate-bounce text-base font-medium text-primary [animation-delay:0ms]">.</span>
+              <span className="animate-bounce text-base font-medium text-primary [animation-delay:150ms]">.</span>
+              <span className="animate-bounce text-base font-medium text-primary [animation-delay:300ms]">.</span>
+            </span>
+          </div>
+
+          {/* Simple progress bar */}
+          <div className="h-1 w-40 overflow-hidden rounded-full bg-primary/10">
+            <div className="h-full w-1/2 animate-pulse bg-gradient-to-r from-primary to-purple-500" />
+          </div>
+        </div>
+      </div>
+    )
   }
 
   return (

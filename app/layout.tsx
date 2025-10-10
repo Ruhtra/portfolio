@@ -126,6 +126,7 @@ export default function RootLayout({
               <Footer />
               <Toaster />
             </div>
+
           </LanguageProvider>
         </ThemeProvider>
       </body>
