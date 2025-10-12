@@ -10,19 +10,19 @@ const nextConfig = {
     unoptimized: true,
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: '**',
+        protocol: "https",
+        hostname: "**",
       },
     ],
     localPatterns: [
       {
-        pathname: '/**',
-        search: '', // Permite qualquer query string
+        pathname: "/**",
+        search: "", // Permite qualquer query string
       },
     ],
-    qualities: [75, 80, 85, 90, 95, 100]
-
+    qualities: [75, 80, 85, 90, 95, 100],
   },
-}
+  outputFileTracingRoot: import.meta.dirname,
+};
 
-export default nextConfig
+export default nextConfig;

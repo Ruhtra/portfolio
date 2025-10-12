@@ -155,8 +155,8 @@ export function Print() {
               <div className="flex h-full">
                 {/* Sidebar */}
                 <div className="w-1/3 bg-gradient-to-b from-blue-900 to-blue-950 p-5 text-white h-full flex flex-col">
-                  <div className="flex-shrink-0 mb-4 flex justify-center">
-                    <div className="h-20 w-20 overflow-hidden rounded-full border-4 border-white">
+                  <div className="flex-shrink-0 mb-2 flex justify-center">
+                    <div className="h-36 w-36 overflow-hidden rounded-full border-4 border-white">
                       <img
                         src={getPhotoUrl()}
                         alt={t("cv.personal.name").toString()}
