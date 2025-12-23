@@ -62,24 +62,8 @@ export default function Projects() {
           ? "O EstudeAi é um aplicativo móvel desenvolvido como preparatório para o IF. Ele oferece uma plataforma interativa onde os usuários podem criar, editar e excluir textos, provas e questões. Além disso, possui um painel administrativo para visualização de receitas e outros dados importantes. Construído com tecnologias modernas como Next.js, Node.js, TypeScript, shadcn, Prisma, PostgreSQL e Supabase, o aplicativo foi projetado para suportar expansões e melhorias futuras."
           : "EstudeAi is a mobile application designed as preparatory for the IF. It provides an interactive platform where users can create, edit, and delete texts, exams, and questions. Additionally, it features an administrative dashboard for viewing revenue and other important data. Built with modern technologies like Next.js, Node.js, TypeScript, shadcn, Prisma, PostgreSQL, and Supabase, the app is designed to support future feature expansions and improvements.",
     },
-    // {
-    //   id: 2,
-    //   title: "E-commerce Platform",
-    //   description:
-    //     language === "pt"
-    //       ? "Uma plataforma completa de e-commerce com painel administrativo, pagamentos e gestão de produtos."
-    //       : "A complete e-commerce platform with admin panel, payments, and product management.",
-    //   image: "/placeholder.svg?height=400&width=600",
-    //   tags: ["React", "Node.js", "TypeScript", "MongoDB"],
-    //   github: "https://github.com/ruhtra/ecommerce",
-    //   demo: "https://ecommerce-demo.com",
-    //   longDescription:
-    //     language === "pt"
-    //       ? "Este projeto é uma plataforma de e-commerce completa desenvolvida com React no frontend e Node.js no backend. Inclui funcionalidades como autenticação de usuários, catálogo de produtos, carrinho de compras, processamento de pagamentos, e um painel administrativo para gerenciar produtos, pedidos e clientes."
-    //       : "This project is a complete e-commerce platform developed with React on the frontend and Node.js on the backend. It includes features such as user authentication, product catalog, shopping cart, payment processing, and an admin panel to manage products, orders, and customers.",
-    // },
     {
-      id: 3,
+      id: 2,
       title: "Portfolio Website",
       description:
         language === "pt"
@@ -93,6 +77,33 @@ export default function Projects() {
         language === "pt"
           ? "Este portfólio foi desenvolvido com Next.js, TypeScript e Tailwind CSS, apresentando meus projetos e habilidades de forma moderna e responsiva. Inclui animações suaves com Framer Motion, modo claro/escuro e formulário de contato funcional."
           : "This portfolio was developed with Next.js, TypeScript, and Tailwind CSS, showcasing my projects and skills in a modern and responsive way. It includes smooth animations with Framer Motion, light/dark mode, and a functional contact form.",
+    },
+    {
+      id: 3,
+      title: "FinSight",
+      description:
+        language === "pt"
+          ? "Sistema de controle financeiro pessoal para monitoramento de gastos e planejamento orçamentário."
+          : "Personal financial control system for expense tracking and budget planning.",
+      image: "/FinSight.png", // Você precisará criar/adicionar esta imagem
+      tags: [
+        "Next.js",
+        "TypeScript",
+        "Auth.js",
+        "Tailwind CSS",
+        "shadcn",
+        "Prisma",
+        "PostgreSQL",
+        "React Hook Form",
+        "Zod",
+        "Recharts",
+      ],
+      github: "https://github.com/Ruhtra/FinSightApp",
+      demo: "https://finsight.ruhtra.work/transacao",
+      longDescription:
+        language === "pt"
+          ? "O FinSight é um sistema completo de controle financeiro pessoal desenvolvido para ajudar usuários a monitorarem seus gastos, estabelecerem metas financeiras e melhorarem sua saúde financeira. A aplicação oferece visualizações intuitivas de despesas e receitas, categorização automática de transações, relatórios detalhados e alertas personalizados. Com autenticação segura e interface responsiva, o FinSight torna o gerenciamento financeiro mais acessível e eficiente para todos os usuários."
+          : "FinSight is a comprehensive personal financial control system designed to help users track their expenses, set financial goals, and improve their financial health. The application offers intuitive visualizations of expenses and income, automatic transaction categorization, detailed reports, and personalized alerts. With secure authentication and a responsive interface, FinSight makes financial management more accessible and efficient for all users.",
     },
     // {
     //   id: 4,
